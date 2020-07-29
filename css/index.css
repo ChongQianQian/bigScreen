@@ -118,7 +118,7 @@ header .showTime {
 }
 .mainbox .panel .chart {
   height: 3rem;
-  background-color: pink;
+  width: 100%;
 }
 .no {
   background-color: rgba(101, 132, 226, 0.1);
