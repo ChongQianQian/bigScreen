@@ -43,8 +43,7 @@ header .showTime {
 .mainbox {
   min-width: 1024px;
   max-width: 1920px;
-  margin: 0 auto;
-  padding: 0.188679rem 0.188679rem 0;
+  padding: 0.125rem 0.125rem 0;
   display: flex;
 }
 .mainbox .column {
@@ -52,81 +51,106 @@ header .showTime {
 }
 .mainbox .column:nth-child(2) {
   flex: 5;
-  margin: 0.125rem 0.1875rem;
+  margin: 0 0.125rem 0.1875rem;
+  overflow: hidden;
 }
-.mainbox .panel {
+.panel {
   position: relative;
   height: 3.875rem;
   border: 1px solid rgba(25, 186, 139, 0.17);
-  background: url(../images/line.png) rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.04) url(../images/line\(1\).png);
   padding: 0 0.1875rem 0.5rem;
   margin-bottom: 0.1875rem;
 }
-.mainbox .panel::before {
+.panel::before {
   position: absolute;
   top: 0;
   left: 0;
+  content: "";
   width: 10px;
   height: 10px;
-  border-left: 2px solid #02a6b5;
   border-top: 2px solid #02a6b5;
-  content: "";
+  border-left: 2px solid #02a6b5;
 }
-.mainbox .panel::after {
+.panel::after {
   position: absolute;
   top: 0;
   right: 0;
+  content: "";
   width: 10px;
   height: 10px;
-  border-right: 2px solid #02a6b5;
   border-top: 2px solid #02a6b5;
-  content: "";
+  border-right: 2px solid #02a6b5;
 }
-.mainbox .panel .panel-footer {
+.panel .panel-footer {
   position: absolute;
-  bottom: 0;
   left: 0;
+  bottom: 0;
   width: 100%;
 }
-.mainbox .panel .panel-footer::before {
+.panel .panel-footer::before {
   position: absolute;
-  left: 0;
   bottom: 0;
+  left: 0;
+  content: "";
   width: 10px;
   height: 10px;
-  border-left: 2px solid #02a6b5;
   border-bottom: 2px solid #02a6b5;
-  content: "";
+  border-left: 2px solid #02a6b5;
 }
-.mainbox .panel .panel-footer::after {
+.panel .panel-footer::after {
   position: absolute;
   bottom: 0;
   right: 0;
+  content: "";
   width: 10px;
   height: 10px;
-  border-right: 2px solid #02a6b5;
   border-bottom: 2px solid #02a6b5;
-  content: "";
+  border-right: 2px solid #02a6b5;
 }
-.mainbox .panel h2 {
+.panel h2 {
   height: 0.6rem;
-  color: #fff;
   line-height: 0.6rem;
   text-align: center;
+  color: #fff;
   font-size: 0.25rem;
   font-weight: 400;
 }
-.mainbox .panel .chart {
+.panel h2 a {
+  margin: 0 0.1875rem;
+  color: #fff;
+  text-decoration: underline;
+}
+.panel .chart {
   height: 3rem;
-  background-color: pink;
 }
 .no {
-  background-color: rgba(101, 132, 226, 0.1);
+  background: rgba(101, 132, 226, 0.1);
   padding: 0.1875rem;
 }
 .no .no-hd {
   position: relative;
   border: 1px solid rgba(25, 186, 139, 0.17);
+}
+.no .no-hd::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 10px;
+  border-top: 2px solid #02a6b5;
+  border-left: 2px solid #02a6b5;
+  top: 0;
+  left: 0;
+}
+.no .no-hd::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 10px;
+  border-bottom: 2px solid #02a6b5;
+  border-right: 2px solid #02a6b5;
+  right: 0;
+  bottom: 0;
 }
 .no .no-hd ul {
   display: flex;
@@ -134,81 +158,76 @@ header .showTime {
 .no .no-hd ul li {
   position: relative;
   flex: 1;
+  text-align: center;
+  height: 1rem;
   line-height: 1rem;
   font-size: 0.875rem;
-  color: yellow;
-  text-align: center;
+  color: #ffeb7b;
+  padding: 0.05rem 0;
   font-family: electronicFont;
+  font-weight: bold;
 }
-.no .no-hd ul li::after {
+.no .no-hd ul li:first-child::after {
   content: "";
   position: absolute;
-  top: 25%;
   height: 50%;
-  right: 0;
   width: 1px;
-  background-color: #fff;
-}
-.no .no-hd::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 10px;
-  border-left: 2px solid #02a6b5;
-  border-top: 2px solid #02a6b5;
-  content: "";
-}
-.no .no-hd::after {
-  position: absolute;
-  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
   right: 0;
-  width: 30px;
-  height: 10px;
-  border-right: 2px solid #02a6b5;
-  border-bottom: 2px solid #02a6b5;
-  content: "";
+  top: 25%;
 }
 .no .no-bd ul {
   display: flex;
 }
 .no .no-bd ul li {
   flex: 1;
-  font-size: 0.225rem;
-  color: greenyellow;
-  text-align: center;
   height: 0.5rem;
   line-height: 0.5rem;
+  text-align: center;
+  font-size: 0.225rem;
+  color: rgba(255, 255, 255, 0.7);
   padding-top: 0.125rem;
 }
 .map {
   position: relative;
   height: 10.125rem;
 }
-.map .map1 {
+.map .chart {
   position: absolute;
-  width: 6.475rem;
-  height: 6.475rem;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  height: 10.125rem;
+  width: 100%;
+}
+.map .map1,
+.map .map2,
+.map .map3 {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 6.475rem;
+  height: 6.475rem;
   background: url(../images/map.png) no-repeat;
   background-size: 100% 100%;
   opacity: 0.3;
 }
 .map .map2 {
-  position: absolute;
   width: 8.0375rem;
   height: 8.0375rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: url(../images/lbx.png) no-repeat;
-  background-size: 100% 100%;
+  background-image: url(../images/lbx.png);
   opacity: 0.6;
-  animation: rotate1 15s linear infinite;
+  animation: rotate 15s linear infinite;
+  z-index: 2;
 }
-@keyframes rotate1 {
+.map .map3 {
+  width: 7.075rem;
+  height: 7.075rem;
+  background-image: url(../images/jt.png);
+  animation: rotate1 10s linear infinite;
+}
+@keyframes rotate {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
   }
@@ -216,19 +235,7 @@ header .showTime {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-.map .map3 {
-  position: absolute;
-  width: 7.075rem;
-  height: 7.075rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: url(../images/jt.png) no-repeat;
-  background-size: 100% 100%;
-  opacity: 0.6;
-  animation: rotate2 5s linear infinite;
-}
-@keyframes rotate2 {
+@keyframes rotate1 {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
   }
@@ -236,10 +243,13 @@ header .showTime {
     transform: translate(-50%, -50%) rotate(-360deg);
   }
 }
-.map .chart {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 10.125rem;
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 42px !important;
+  }
+}
+@media screen and (min-width: 1920) {
+  html {
+    font-size: 80px !important;
+  }
 }
